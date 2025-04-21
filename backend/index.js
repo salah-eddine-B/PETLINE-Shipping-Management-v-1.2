@@ -9,7 +9,11 @@ const port = process.env.PORT || 3001;
 const server = http.createServer(app);
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: '*', // Allow all origins for testing
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow all necessary HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'] // Allow common headers
+}));
 app.use(express.json()); // Middleware to parse JSON bodies
 
 let productsData = require('./Products.json');
