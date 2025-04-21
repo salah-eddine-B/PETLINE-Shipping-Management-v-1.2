@@ -1,0 +1,188 @@
+@import '../../styles/variables.css';
+
+/* Modal Background */
+.add-product-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+  backdrop-filter: blur(3px); /* Apply blur effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+/* Modal Box */
+.add-product-modal-content {
+  background: var(--sidebar-bg);
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 50vw;
+  max-width: 90%;
+  max-height: 80vh; /* Définir une hauteur maximale pour le modal */
+  overflow-y: auto; /* Activer le défilement vertical si le contenu dépasse */
+}
+
+/* Centrer le titre */
+.add-product-modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px; /* Ajout d'un peu d'espace sous le titre */
+  color: var(--text-color); /* Assurez-vous que la couleur du texte est bien définie */
+  font-weight: 500;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.add-product-modal-content h2:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary-accent);
+  border-radius: 2px;
+}
+
+.add-product-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.add-product-row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Form Fields */
+.add-product-form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-product-form-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+/* Style des inputs et textarea */
+.add-product-form-group input,
+.add-product-form-group textarea {
+  padding: 10px; /* Augmentation du padding pour un aspect plus aéré */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* Bordures légèrement plus arrondies */
+  font-size: 14px;
+  background-color: #f9f9f9; /* Ajout d'un fond légèrement gris */
+}
+
+/* Style spécifique pour le textarea (si nécessaire) */
+.add-product-form-group textarea {
+  min-height: 80px; /* Ajustement de la hauteur minimale */
+}
+
+.add-product-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px; /* Augmentation de la marge au-dessus des boutons */
+}
+
+/* Buttons */
+.add-product-btn {
+  padding: 10px 15px; /* Augmentation du padding des boutons */
+  border: none;
+  border-radius: 6px; /* Bordures légèrement plus arrondies */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.add-product-btn-primary {
+  background: #4A60E7;
+  color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Ajout d'une légère ombre */
+}
+
+.add-product-btn-primary:hover {
+  background: #3d51c7; /* Légère variation de couleur au survol */
+}
+
+.add-product-btn-secondary {
+  background: #F85565;
+  color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Ajout d'une légère ombre */
+}
+
+.add-product-btn-secondary:hover {
+  background: #e44a59; /* Légère variation de couleur au survol */
+}
+
+/* Styles pour la barre de défilement (WebKit - Chrome, Safari) */
+.add-product-modal-content::-webkit-scrollbar {
+  width: 8px; /* Largeur de la barre de défilement */
+}
+
+.add-product-modal-content::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Couleur de la piste de la barre de défilement */
+  border-radius: 4px;
+}
+
+.add-product-modal-content::-webkit-scrollbar-thumb {
+  background-color: #888; /* Couleur du "pouce" de la barre de défilement */
+  border-radius: 4px;
+}
+
+.add-product-modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Couleur du "pouce" au survol */
+}
+
+/* Styles pour la barre de défilement (Firefox) */
+.add-product-modal-content {
+  scrollbar-width: thin; /* Peut être 'auto' ou 'none' */
+  scrollbar-color: #888 #f1f1f1; /* Couleur du pouce et de la piste */
+}
+  
+.add-product-message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.add-product-message.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+.add-product-message {
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .add-product-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .add-product-modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+}

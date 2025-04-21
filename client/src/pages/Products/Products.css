@@ -1,0 +1,150 @@
+@import '../../styles/variables.css';
+/* Ensure the entire page layout remains fixed */
+.products-container {
+    display: flex;
+    flex-direction: column;
+    /* padding: var(--spacing-md); */
+    max-height: 100vh;
+    background-color: var(--background-color);
+}
+
+/* Table Wrapper */
+.table-container {
+    flex: 1; /* Takes remaining space */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--sidebar-bg);
+    /* padding: var(--spacing-md); */
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Scrollable Table */
+.table-wrapper {
+    flex: 1;
+    overflow-y: auto; /* Enables scrolling */
+    max-height: 77vh; 
+}
+
+/* Responsive Table */
+.product-table {
+    width: 100%;
+    min-width: 900px; /* Ensures columns don't get squeezed */
+    border-collapse: collapse;
+}
+
+/* Table Headers */
+.product-table th {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    font-weight: bold;
+    color: var(--text-color);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--border-color);
+    padding: var(--spacing-sm) 20px;
+    text-align: left;
+}
+
+/* Table Rows */
+.product-table td {
+    padding: var(--spacing-sm) 20px;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+/* Alternating Row Colors */
+.product-table tbody tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* Hover Effect */
+.product-table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Scrollbar Customization (Optional) */
+.table-wrapper::-webkit-scrollbar {
+    width: 4px;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 10px;
+}
+
+/* Button Container */
+.buttons-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 10px;
+}
+
+/* General Button Style */
+.buttons-group button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    width: 8vw;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.add-button {
+    background-color: var(--primary-accent);
+    color: white;
+}
+.add-button:hover {
+    background-color: #3F56C2; /* Darker shade for hover */
+}
+
+/* Update Button (Neutral Gray) */
+.update-button {
+    background-color: var(--border-color);
+    color: var(--text-color);
+}
+.update-button:hover {
+    background-color: #D4D7DC; /* Slightly darker gray */
+}
+
+/* Delete Button (Danger - Secondary Accent) */
+.delete-button {
+    background-color: var(--secondary-accent);
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #D84456; /* Darker red for hover */
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] .update-button {
+    background-color: #2C3138;
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .update-button:hover {
+    background-color: #3A3F46;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.message.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}

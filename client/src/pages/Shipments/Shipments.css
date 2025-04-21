@@ -1,0 +1,134 @@
+.shipments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: 100%;
+}
+
+.buttons-group {
+    display: flex;
+    gap: 10px;
+    /* margin-bottom: 20px; */
+}
+
+.buttons-group button{
+    width: fit-content;
+}
+
+.add-button, .update-button, .delete-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.add-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.add-button:hover {
+    background-color: #218838;
+}
+
+.update-button {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.update-button:hover {
+    background-color: #e0a800;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+.table-container {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.table-wrapper {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+.shipment-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.shipment-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #f8f9fa;
+}
+
+.shipment-table th {
+    padding: 12px;
+    text-align: left;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    color: #495057;
+}
+
+.shipment-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+    height: 40px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.shipment-table tbody tr {
+    height: 40px;
+}
+
+.shipment-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.checkbox-cell {
+    width: 24px;
+    padding: 0;
+    text-align: center;
+}
+.checkbox-cell_line {
+    width: 40px;
+}
+
+.checkbox-cell input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.loading-div, .error-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 18px;
+    color: #6c757d;
+}
+
+.error-div {
+    color: #dc3545;
+} 
