@@ -18,7 +18,7 @@
 
 /* Modal Box */
 .add-product-modal-content {
-  background: var(--sidebar-bg);
+  background: var(--light-card-bg);
   padding: 24px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);

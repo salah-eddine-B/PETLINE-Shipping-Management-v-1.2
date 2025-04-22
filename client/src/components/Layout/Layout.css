@@ -51,7 +51,7 @@
   .main-content {
     flex: 1;
     background-color: #ffffff;
-    padding: 15px;
+    /* padding: 15px; */
     /* overflow-y: auto; */
     max-height: 100vh;
     position: relative;
