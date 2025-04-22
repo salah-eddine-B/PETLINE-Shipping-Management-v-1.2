@@ -4,6 +4,9 @@
     flex-direction: column;
     background-color: var(--light-card-bg);
     box-shadow: var(--shadow-md);
+    width: 250px;
+    margin: 5px;
+    border-radius: 10px;
 }
 
 .sidebar-header {
@@ -14,7 +17,7 @@
 }
 
 .sidebar-header img {
-    max-width: 150px;
+    max-width: 190px;
     height: auto;
 }
 
@@ -25,7 +28,13 @@
     padding: 0 var(--spacing-2);
 }
 
+/* Menu Item Styles */
 .menu-item {
+    list-style: none;
+    margin-bottom: var(--spacing-1);
+}
+
+.menu-item-content {
     display: flex;
     align-items: center;
     gap: var(--spacing-3);
@@ -34,28 +43,67 @@
     text-decoration: none;
     border-radius: var(--radius-lg);
     transition: var(--transition-all);
+    cursor: pointer;
 }
 
-.menu-item:hover {
+.menu-item-content:hover {
     background-color: var(--primary-color);
     color: white;
 }
 
-.menu-item.active {
+.menu-item.active .menu-item-content {
     background-color: var(--primary-color);
     color: white;
 }
 
-.menu-item img {
+.menu-item-content img {
     width: 20px;
     height: 20px;
     filter: brightness(0.7);
     transition: var(--transition-all);
 }
 
-.menu-item:hover img,
-.menu-item.active img {
+.menu-item-content:hover img,
+.menu-item.active .menu-item-content img {
     filter: brightness(1);
+}
+
+/* Submenu Styles */
+.submenu-list {
+    list-style: none;
+    margin-left: var(--spacing-8);
+    margin-top: var(--spacing-2);
+    padding-left: var(--spacing-4);
+    border-left: 2px solid var(--light-border);
+}
+
+.submenu-item {
+    padding: var(--spacing-2) var(--spacing-4);
+    color: var(--light-text-subtle);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition-all);
+}
+
+.submenu-item:hover {
+    color: var(--primary-color);
+}
+
+.submenu-item.active {
+    color: var(--primary-color);
+    font-weight: var(--font-medium);
+}
+
+.submenu-indicator {
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
 }
 
 /* Dark mode support */
@@ -68,11 +116,24 @@
         border-bottom-color: var(--dark-border);
     }
 
-    .menu-item {
+    .menu-item-content {
         color: var(--dark-text);
     }
 
-    .menu-item img {
+    .submenu-list {
+        border-left-color: var(--dark-border);
+    }
+
+    .submenu-item {
+        color: var(--dark-text-subtle);
+    }
+
+    .submenu-item:hover,
+    .submenu-item.active {
+        color: var(--primary-color);
+    }
+
+    .menu-item-content img {
         filter: brightness(0.8);
     }
 }
