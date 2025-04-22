@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import DashboardIcon from '../../assets/icons/Dashboard.svg';
 import ProductIcon from '../../assets/icons/Products.svg';
 import ShipmentIcon from '../../assets/icons/Panier.svg';
@@ -7,6 +8,8 @@ import Logo from '../../assets/icons/PETLINELOGO.svg';
 import './Sidebar.css';
 
 export default function Sidebar() {
+    const navigate = useNavigate();
+    const location = useLocation();
     const [activeIndex, setActiveIndex] = useState(null);
     const [activeSubMenu, setActiveSubMenu] = useState('');
 
@@ -47,14 +50,38 @@ export default function Sidebar() {
         },
     ];
 
-    const handleActiveMenu = (index, path) => {
+    // Set active states based on current path when component mounts
+    React.useEffect(() => {
+        const currentPath = location.pathname;
+        const menuIndex = menuItems.findIndex(item => {
+            if (item.submenu) {
+                return item.submenu.some(subItem => currentPath === subItem.path);
+            }
+            return currentPath === item.path;
+        });
+        
+        if (menuIndex !== -1) {
+            setActiveIndex(menuIndex);
+            if (menuItems[menuIndex].submenu) {
+                const subItem = menuItems[menuIndex].submenu.find(item => item.path === currentPath);
+                if (subItem) {
+                    setActiveSubMenu(subItem.name);
+                }
+            }
+        }
+    }, [location.pathname]);
+
+    const handleActiveMenu = (index, path, hasSubmenu) => {
         setActiveIndex(prevIndex => prevIndex === index ? null : index);
-        // You can add navigation logic here when you set up routing
+        if (!hasSubmenu) {
+            navigate(path);
+            setActiveSubMenu('');
+        }
     };
 
     const handleSubMenu = (subItem) => {
-        setActiveSubMenu(prev => prev === subItem ? '' : subItem);
-        // You can add navigation logic here when you set up routing
+        setActiveSubMenu(prev => prev === subItem.name ? '' : subItem.name);
+        navigate(subItem.path);
     };
 
     return (
@@ -71,10 +98,7 @@ export default function Sidebar() {
                         {!item.submenu ? (
                             <div 
                                 className="menu-item-content"
-                                onClick={() => {
-                                    handleActiveMenu(index, item.path);
-                                    setActiveSubMenu('');
-                                }}
+                                onClick={() => handleActiveMenu(index, item.path, false)}
                             >
                                 <img src={item.icon} alt={item.name} />
                                 <span>{item.name}</span>
@@ -83,7 +107,7 @@ export default function Sidebar() {
                             <div className={`submenu ${activeIndex === index ? 'active' : ''}`}>
                                 <div 
                                     className="menu-item-content"
-                                    onClick={() => handleActiveMenu(index, item.path)}
+                                    onClick={() => handleActiveMenu(index, item.path, true)}
                                 >
                                     <img src={item.icon} alt={item.name} />
                                     <span>{item.name}</span>
@@ -95,7 +119,7 @@ export default function Sidebar() {
                                             <li
                                                 key={subIndex}
                                                 className={`submenu-item ${activeSubMenu === subItem.name ? 'active' : ''}`}
-                                                onClick={() => handleSubMenu(subItem.name)}
+                                                onClick={() => handleSubMenu(subItem)}
                                             >
                                                 {activeSubMenu === subItem.name && (
                                                     <span className="submenu-indicator"></span>

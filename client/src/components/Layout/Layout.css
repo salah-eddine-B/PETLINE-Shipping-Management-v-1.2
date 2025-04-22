@@ -6,7 +6,7 @@
   
   body {
     font-family: sans-serif;
-    background-color: #f3f4f8;
+    background-color: var(--light-background);
     height: 100vh;
     overflow: hidden;
   }
@@ -15,6 +15,7 @@
     display: flex;
     height: 100vh;
     position: relative;
+    gap: 5px;
   }
   
   /* Sidebar styles */
@@ -50,9 +51,9 @@
   .main-content {
     flex: 1;
     background-color: #ffffff;
-    padding: 40px;
-    overflow-y: auto;
-    min-height: 100vh;
+    padding: 15px;
+    /* overflow-y: auto; */
+    max-height: 100vh;
     position: relative;
   }
   
