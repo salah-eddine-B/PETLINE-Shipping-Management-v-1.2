@@ -242,28 +242,6 @@
     "price": 29.99
   },
   {
-    "id": "0023-25",
-    "product_name": "loisqjd",
-    "reference": "jslqjldsj",
-    "description": "lkjlsqjlqsjd",
-    "unit": "jljsqlkjds",
-    "brand": "ljlsqjldqj",
-    "entry_date": "2025-03-25",
-    "quantity": "66",
-    "price": "444"
-  },
-  {
-    "id": "0026-25",
-    "product_name": "nsqkjndkj",
-    "reference": "nkjnqkjsnd",
-    "description": "kjnkjqnskjdn",
-    "unit": "kjnkqjnskjdn",
-    "brand": "kjnbkjqnsdkjn",
-    "entry_date": "2025-03-25",
-    "quantity": "77",
-    "price": "888"
-  },
-  {
     "id": "0029-25",
     "product_name": "MOUSE",
     "reference": "psjpojd",
@@ -297,17 +275,6 @@
     "price": "77"
   },
   {
-    "id": "0033-25",
-    "product_name": "MOUSE",
-    "reference": "oijsdois",
-    "description": "hiuhiuh",
-    "unit": "hiuhiu",
-    "brand": "hiuhi",
-    "entry_date": "2025-03-26",
-    "quantity": "15",
-    "price": "4"
-  },
-  {
     "id": "0035-25",
     "product_name": "MOUSE",
     "reference": "oihjoizjosq",
@@ -317,17 +284,6 @@
     "entry_date": "2025-03-26",
     "quantity": "17",
     "price": "14"
-  },
-  {
-    "id": "0036-25",
-    "product_name": "jsjujzjj",
-    "reference": "kkjjii",
-    "description": "kkjnoijojo",
-    "unit": "kkkkkk",
-    "brand": "oijooijo",
-    "entry_date": "2025-03-26",
-    "quantity": "77",
-    "price": "66"
   },
   {
     "id": "0037-25",
@@ -341,17 +297,6 @@
     "price": "99"
   },
   {
-    "id": "0038-25",
-    "product_name": "MOUSE",
-    "reference": "xssx",
-    "description": "jijij",
-    "unit": "ijiji",
-    "brand": "jijij",
-    "entry_date": "2025-03-26",
-    "quantity": "6",
-    "price": "3"
-  },
-  {
     "product_name": "Mechanical UUUUUUUUUUUUUUUU",
     "reference": "MK-67890",
     "description": "RGB REDREDREDEDFEDches",
@@ -360,17 +305,6 @@
     "entry_date": "2024-02-15",
     "quantity": 30,
     "price": 89.99
-  },
-  {
-    "id": "0044-25",
-    "product_name": "MOUSE",
-    "reference": "M-JIZIOO ",
-    "description": "Wireless mouse for deferent usage",
-    "unit": "piece ",
-    "brand": "HP",
-    "entry_date": "2025-04-05",
-    "quantity": "88",
-    "price": "50"
   },
   {
     "id": "0037-25",
@@ -382,5 +316,16 @@
     "entry_date": "2025-04-12",
     "quantity": "800",
     "price": "12000"
+  },
+  {
+    "id": "0033-25",
+    "product_name": "keyboard",
+    "reference": "sans file",
+    "description": "this keyboriijodfjoq",
+    "unit": "2 piece",
+    "brand": "logitech",
+    "entry_date": "2025-04-22",
+    "quantity": "60",
+    "price": "70"
   }
 ]

@@ -25,16 +25,16 @@ export default function Sidebar() {
             icon: ContactIcon,
             submenu: [
                 {
-                    path: "/contacts/employes",
-                    name: "Employees"
+                    path: "/employees",
+                    name: "Employés"
                 },
                 {
-                    path: "/contacts/clients",
+                    path: "/clients",
                     name: "Clients",
                 },
                 {
-                    path: "/contacts/fourniseur",
-                    name: "Fourniseur"
+                    path: "/suppliers",
+                    name: "Fournisseurs"
                 }
             ],
         },
